@@ -5,9 +5,10 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const Token = await ethers.getContractFactory("Token");
+  const Token = await ethers.getContractFactory("TugrikToken");
   const token = await Token.deploy();
 
+  console.log("Account balance after deploy:", (await deployer.getBalance()).toString());
   console.log("Token address:", token.address);
 }
 
